@@ -1,13 +1,33 @@
 import logo from './logo.svg';
 import './App.css';
+import profilePic from './profile.jpg';
+
+const clickEvent = (img) => {
+  img.target.setAttribute('src', profilePic);
+}
+
+function clickEvent2(e){
+  e.target.setAttribute('src', {profilePic});
+  e.target.setAttribute('alt', 'logo');
+}
+
+const image = (
+	<img 
+		src={logo}
+		alt="image"
+    onClick={clickEvent}
+    className="App-logo"
+  />
+);
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        {image}
+        <div id="target" ></div>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Pedro Azenha
         </p>
         <a
           className="App-link"
